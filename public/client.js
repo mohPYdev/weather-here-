@@ -43,9 +43,9 @@ async function postData() {
     const lat = data.location.lat;
     const lon = data.location.lon;
     const ele = document.getElementById('paragraph');
-    let text = `the latitude is ${lat} and the longitude is ${lon}`;
-        text += `the weather in ${data.location.region} , ${data.location.country} is ${data.current.weather_descriptions[0]} and the temperature is ${data.current.temperature}&#8451;`;
-    ele.textContent = text;
+    let text = `<p>the latitude is ${lat} and the longitude is ${lon}</p>`;
+        text += `<p>the weather in ${data.location.region} , ${data.location.country} is ${data.current.weather_descriptions[0]} and the temperature is ${data.current.temperature}&#8451;</p>`;
+    ele.innerHTML = text;
 
 }
 
