@@ -6,8 +6,9 @@ require('dotenv').config()
 const { request, response } = require('express');
 const app =  express();
 
-//listens on port 3000
-app.listen(3000 , () => { console.log('listening ... ')});
+//listens on port 
+const port = process.env.PORT || 3000;
+app.listen(port , () => { console.log('listening ... ')});
 
 //specify the folder for the static files.
 app.use(express.static('public'));

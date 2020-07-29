@@ -3,8 +3,8 @@ async function getCords() {
     // get the ip API
     const response1 = await fetch('https://api.ipify.org?format=json');
     const ip = await response1.json();
+    
     // the coordinates API
-    // const api_key = '21974386848d14';
     const response2 = await fetch(`/coords/${ip.ip}`);
     const data = await response2.json();
     const loc = data.loc;
@@ -38,4 +38,8 @@ async function postData() {
     console.log(json);
 }
 
-postData();
+
+const addEl = document.getElementById('add');
+addEl.addEventListener('click', () => {
+    postData();
+});
