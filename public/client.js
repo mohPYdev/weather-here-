@@ -9,6 +9,7 @@ async function getCords() {
     const data = await response2.json();
     const loc = data.loc;
     console.log("got the cords");
+    console.log(loc);
     return loc;
 }
 
@@ -18,6 +19,7 @@ async function getWeather(){
     const response = await fetch(`/weather/${latlon}`);
     const data = await response.json();
     console.log("got the weather data!");
+    console.log(data);
     return data;
 }
 
@@ -25,6 +27,7 @@ async function getWeather(){
 async function postData() { 
     const data = await getWeather();
     console.log("posting now!");
+    console.log(data);
     const option = {
         method: 'POST',
         headers: {
